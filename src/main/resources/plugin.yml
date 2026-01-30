@@ -1,0 +1,24 @@
+name: KillerEvent
+version: 1.0.0
+main: com.killer.KillerEventPlugin
+api-version: 1.21
+description: Random player killer event plugin
+authors: [Developer]
+
+commands:
+  killev:
+    description: KillerEvent command
+    usage: /killev <start|stop|status|help>
+    permission: killerevent.use
+    aliases: [ke]
+
+permissions:
+  killerevent.use:
+    description: Allow to use KillerEvent commands
+    default: op
+  killerevent.start:
+    description: Allow to start event
+    default: op
+  killerevent.stop:
+    description: Allow to stop event
+    default: op

@@ -1,0 +1,43 @@
+# KillerEvent Plugin Configuration
+
+# Интервал между событиями в часах (по умолчанию каждые 2 суток = 48 часов)
+event-interval-hours: 48
+
+# Длительность события в минутах
+event-duration-minutes: 120
+
+# Интервал оповещения координат в минутах
+coordinates-broadcast-interval-minutes: 10
+# Минимальное количество игроков для старта события
+minimum-players: 3
+
+
+# Награды
+rewards:
+  # Награда если игрок-цель выжил
+  survivor-reward:
+    command: "give {player} diamond 5"
+    message: "§6§lВы выжили! §eПолучена награда!"
+  
+  # Награда за убийство игрока-цели
+  killer-reward:
+    command: "give {player} diamond 10"
+    message: "§6§lВы убили цель! §eПолучена награда!"
+
+# Наказание за выход из игры (если игрок-цель вышел)
+penalties:
+  quit-penalty:
+    # Команды наказания (можно добавить несколько)
+    commands:
+      - "xp add {player} -100 levels"
+      - "eco take {player} 1000"
+    message: "§c§lВы вышли из игры будучи целью! §eВы наказаны!"
+
+# Сообщения
+messages:
+  event-started: "§c§l=== KILLER EVENT STARTED ===\n§6Игрок §e{target}§6 выбран целью!\n§6У вас есть §e{duration}§6 минут, чтобы его убить!"
+  coordinates-broadcast: "§6§l[KILLER EVENT] §eЦель находится: §c{x}, {y}, {z} §e(Мир: {world})"
+  event-ended-survived: "§6§l=== EVENT ENDED ===\n§e{target}§6 выжил! Ему выдана награда!"
+  event-ended-killed: "§6§l=== EVENT ENDED ===\n§e{killer}§6 убил цель §e{target}§6! Ему выдана награда!"
+  event-ended-quit: "§6§l=== EVENT ENDED ===\n§e{target}§6 вышел из игры и был наказан!"
+  player-killed: "§c{target}§6 был убит игроком §c{killer}§6!"

@@ -1,0 +1,5 @@
+com\killer\EventManager.class
+com\killer\KillerEventCommand.class
+com\killer\PlayerQuitListener.class
+com\killer\KillerEventPlugin.class
+com\killer\PlayerDeathListener.class
